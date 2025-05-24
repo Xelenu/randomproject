@@ -146,7 +146,7 @@
       </p>
       <label><input type="checkbox" id="acknowledge-checkbox"> I understand.</label><br>
       <button id="close-warning" disabled>Start session!</button><br>
-      <i style="font-size:14px;margin-top:10px;display:block;">Version: 1.8</i>
+      <i style="font-size:14px;margin-top:10px;display:block;">Version: 2.0</i>
     </div>
   </div>
 
@@ -324,9 +324,12 @@
       }
     });
 
-   document.addEventListener('keydown', function (e) {
+document.addEventListener('keydown', function (e) {
     if (e.ctrlKey) {
-        e.preventDefault();
+        const allowedKeys = ['c', 'v', 'C', 'V'];
+        if (!allowedKeys.includes(e.key)) {
+            e.preventDefault();
+        }
     }
 });
   </script>
